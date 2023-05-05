@@ -17,12 +17,12 @@ const subMenuData = [
 
 const Menu = ({ showCatMenu, setShowCatMenu }) => {
   return (
-    <ul className="hidden md:flex items-center gap-8 font-medium text-black">
+    <ul className="hidden md:flex items-center gap-8 font-medium text-black ">
       {data.map((items) => {
         return (
           <React.Fragment key={items.id}>
             {!!items?.subMenu ? (
-              <li className="cursor-pointer flex items-center gap-2 relative"
+              <li className="cursor-pointer flex items-center gap-2 relative hover:text-gray"
                 onMouseEnter={()=>setShowCatMenu(true)}  onMouseLeave={()=>{setShowCatMenu(false)}}
               >
                 {items.name}
@@ -32,7 +32,7 @@ const Menu = ({ showCatMenu, setShowCatMenu }) => {
                     {subMenuData.map((submenu) => {
                       return (
                         <Link key={submenu.id} href="/" onClick={()=>{setShowCatMenu(false)}}>
-                          <li className="h-12 flex justify-between items-center px-3 hover:bg-black hover:text-white rounded-md">
+                          <li className="h-12 flex justify-between items-center px-3 hover:bg-smokeWhite rounded-md">
                             {submenu.name}
                             <span className="opacity-50 text-sm">({submenu.doc_count})</span>
                           </li>
@@ -43,7 +43,7 @@ const Menu = ({ showCatMenu, setShowCatMenu }) => {
                 )}
               </li>
             ) : (
-              <li className="cursor-pointer">
+              <li className="cursor-pointer hover:text-gray">
                 <Link href={items?.url}>{items.name}</Link>
               </li>
             )}

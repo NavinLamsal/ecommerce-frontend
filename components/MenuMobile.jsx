@@ -17,13 +17,13 @@ const subMenuData = [
 
 const MenuMobile = ({ showCatMenu, setShowCatMenu, setMobileMenu }) => {
   return (
-    <ul className="flex flex-col md:hidden font-bold absolute top-[50px] left-0 w-full h-[calc(100vh-50px)] bg-white border-t text-black">
+    <ul className="flex flex-col md:hidden font-bold absolute top-[50px] left-0 w-full h-[calc(100vh-50px)] bg-white border-t text-black z-20">
       {data.map((items) => {
         return (
           <React.Fragment key={items.id}>
             {!!items?.subMenu ? (
               <li
-                className="cursor-pointer flex flex-col px-5 py-4 border-b relative"
+                className="cursor-pointer flex flex-col px-5 py-4 border-b relative "
                 onClick={()=>setShowCatMenu(!showCatMenu)}
               >
                 <div className="flex justify-between items-center">
@@ -34,7 +34,7 @@ const MenuMobile = ({ showCatMenu, setShowCatMenu, setMobileMenu }) => {
                   />
                 </div>
                 {showCatMenu && (
-                  <ul className="bg-black/[0.05] -mx-5 mt-4 -mb-4">
+                  <ul className="bg-smokeWhite -mx-5 mt-4 -mb-4">
                     {subMenuData.map((submenu) => {
                       return (
                         <Link
