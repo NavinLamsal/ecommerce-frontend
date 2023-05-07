@@ -13,7 +13,7 @@ module.exports = {
       green:"#d2ffd2",
       gray:"#b2b2b2",
       blue:"#bfffff",
-      red:"#800000",
+      red:"#e10600",
     },
     fontFamily:{
       oswald:"Oswald,sans-serif",

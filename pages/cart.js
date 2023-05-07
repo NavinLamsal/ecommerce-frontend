@@ -40,6 +40,9 @@ const Cart = () => {
                 include delivery costs and international transaction fees.
               </div>
             </div>
+            <button className="w-full py-4 rounded-full bg-red text-white text-lg font-medium transition-transform active:scale-95 mb-3 hover:opacity-75 flex items-center gap-2 justify-center">
+              Checkout
+            </button>
           </div>
         </div>
         <div className="flex-[2] flex flex-col items-center pb-12 md:mt-14">

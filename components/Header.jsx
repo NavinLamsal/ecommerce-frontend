@@ -33,17 +33,18 @@ const Header = () => {
   }, [lastScrollY]);
 
   return (
+    <>
     <header
-      className={`w-full h-12 md:h-20 bg-smokeWhite flex items-center justify-between z-20 sticky top-0 transition-transform duration-300 ${show}`}
+      className={`w-full h-12 md:h-20 bg-black flex items-center justify-between z-20 sticky top-0 transition-transform duration-300 ${show}`}
     >
       <Wrapper className="h-16 flex justify-between items-center">
         <Link href="/">
           <Image
-            src="/logo.png"
+            src="/Shop.png"
             alt="logo"
             width={100}
             height={100}
-            className="w-10 md:w-16"
+            className="w-16 md:w-32"
           />
         </Link>
         <Menu showCatMenu={showCatMenu} setShowCatMenu={setShowCatMenu} />
@@ -54,7 +55,7 @@ const Header = () => {
             setMobileMenu={setMobileMenu}
           />
         )}
-        <div className="flex items-center gap-2 text-black ">
+        <div className="flex items-center gap-2 text-white ">
           {/* favourite icon  */}
           <div
             className="w-8 md:w-12 h-8 md:h-12 rounded-full flex justify-center items-center hover:bg-black cursor-pointer relative
@@ -106,6 +107,11 @@ const Header = () => {
         </div>
       </Wrapper>
     </header>
+   <div className="bg-red h-20 text-white flex items-center justify-center">
+    <input type="text" placeholder="Search"  className="w-2/4 h-10 p-4 my-2 text-gray rounded-full"/>
+    <Icon icon="ic:sharp-search" className="text-4xl active:scale-90 hover:text-black" />
+   </div>
+    </>
   );
 };
 
