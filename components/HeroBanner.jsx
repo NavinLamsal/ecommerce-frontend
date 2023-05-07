@@ -28,19 +28,19 @@ const HeroBanner = () => {
         )}
       >
         <div>
-          <img src="/slide-1.png" className="aspect-[16/10] md:aspect-auto" />
+          <img src="/slide1.png" className="aspect-[16/10] md:aspect-auto" />
           <div className="px-4 md:px-10 py-3 md:py-6 font-oswald bg-white absolute bottom-6 md:bottom-16 text-black text-sm md:text-3xl uppercase font-medium cursor-pointer hover:opacity-90">
             Shop now
           </div>
         </div>
         <div>
-          <img src="/slide-2.png" className="aspect-[16/10] md:aspect-auto" />
+          <img src="/slide2.png" className="aspect-[16/10] md:aspect-auto" />
           <div className="px-4 md:px-10 py-3 md:py-6 font-oswald bg-white absolute bottom-6 md:bottom-16 text-black text-sm md:text-3xl uppercase font-medium cursor-pointer hover:opacity-90">
             Shop now
           </div>
         </div>
         <div>
-          <img src="/slide-3.png" className="aspect-[16/10] md:aspect-auto" />
+          <img src="/slide3.png" className="aspect-[16/10] md:aspect-auto" />
           <div className="px-4 md:px-10 py-3 md:py-6 font-oswald bg-white absolute bottom-6 md:bottom-16 text-black text-sm md:text-3xl uppercase font-medium cursor-pointer hover:opacity-90">
             Shop now
           </div>
