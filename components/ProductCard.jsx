@@ -5,11 +5,11 @@ import React from 'react'
 
 const ProductCard = ({data:{attributes:p, id}}) => {
   return (
-    <Link href={`/products/${p.slug}`} className='transform overflow-hidden bg-white duration-200 hover:scale-105 drop-shadow-lg cursor-pointer '>
+    <Link href={`/product/${p.slug}`} className='transform overflow-hidden bg-white duration-200 hover:scale-105 drop-shadow-lg cursor-pointer '>
         <Image
         width={500}
         height={500}
-        src={p.thumbnail.data[0].attributes.url}
+        src={p.thumbnail?.data[0].attributes.url}
         alt={p.name}
         /> 
         <div className='p-4 text-black'>
