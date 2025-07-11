@@ -73,17 +73,38 @@ const Category = ({ category, products, slug }) => {
 
 export default Category;
 
+// export async function getStaticPaths() {
+//   const category = await fetchDataFromApi("/api/categories?populate=*");
+//   const paths = category?.data?.map((c) => ({
+//       params: {
+//           slug: c.attributes.slug,
+//       },
+//   }));
+
+//   return {
+//       paths,
+//       fallback: false,
+//   };
+// }
+
 export async function getStaticPaths() {
-  const category = await fetchDataFromApi("/api/categories?populate=*");
-  const paths = category?.data?.map((c) => ({
-      params: {
-          slug: c.attributes.slug,
-      },
-  }));
+  const category = await fetchDataFromApi("/api/categories");
+
+  const paths = Array.isArray(category?.data)
+    ? category.data
+        .filter((c) => c?.attributes?.slug)
+        .map((c) => ({
+          params: {
+            slug: c.attributes.slug,
+          },
+        }))
+    : [];
+
+  console.log("✔ getStaticPaths paths:", paths);
 
   return {
-      paths,
-      fallback: false,
+    paths,
+    fallback: false,
   };
 }
 

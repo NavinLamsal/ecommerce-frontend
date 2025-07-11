@@ -5,7 +5,7 @@ export const fetchDataFromApi =async(endpoint) =>{
     const options ={
         method : 'GET',
         headers : {
-            Authorization : 'Bearer '+STRAPI_API_TOKEN
+            Authorization : 'Bearer '+ STRAPI_API_TOKEN
         }
     };
 

@@ -138,13 +138,36 @@ const ProductDetails = ({ product, products }) => {
 
 export default ProductDetails;
 
+// export async function getStaticPaths() {
+//   const products = await fetchDataFromApi("/api/products?populate=*");
+//   console.log("products",products.data);
+//   const paths = products?.data?.map((p) => ({
+//     params: {
+//       slug: p.attributes.slug,
+//     },
+//   }));
+
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// }
+
+
 export async function getStaticPaths() {
-  const products = await fetchDataFromApi("/api/products?populate=*");
-  const paths = products?.data?.map((p) => ({
-    params: {
-      slug: p.attributes.slug,
-    },
-  }));
+  const category = await fetchDataFromApi("/api/products");
+
+  const paths = Array.isArray(category?.data)
+    ? category.data
+        .filter((c) => c?.attributes?.slug)
+        .map((c) => ({
+          params: {
+            slug: c.attributes.slug,
+          },
+        }))
+    : [];
+
+  console.log("✔ getStaticPaths paths:", paths);
 
   return {
     paths,
