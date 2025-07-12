@@ -88,7 +88,8 @@ export default Category;
 // }
 
 export async function getStaticPaths() {
-  const category = await fetchDataFromApi("/api/categories");
+  const category = await fetchDataFromApi("/api/categories?populate=*");
+ 
 
   const paths = Array.isArray(category?.data)
     ? category.data
@@ -100,7 +101,7 @@ export async function getStaticPaths() {
         }))
     : [];
 
-  console.log("✔ getStaticPaths paths:", paths);
+  console.log("✔ getStaticPaths paths category:", paths);
 
   return {
     paths,
